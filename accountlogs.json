@@ -1,0 +1,107 @@
+{
+  "annotations": {
+    "list": [
+      {
+        "builtIn": 1,
+        "datasource": "-- Grafana --",
+        "enable": true,
+        "hide": true,
+        "iconColor": "rgba(0, 211, 255, 1)",
+        "name": "Annotations & Alerts",
+        "target": {
+          "limit": 100,
+          "matchAny": false,
+          "tags": [],
+          "type": "dashboard"
+        },
+        "type": "dashboard"
+      }
+    ]
+  },
+  "editable": true,
+  "fiscalYearStartMonth": 0,
+  "graphTooltip": 0,
+  "id": 31,
+  "iteration": 1671831241622,
+  "links": [],
+  "liveNow": false,
+  "panels": [
+    {
+      "datasource": {
+        "type": "loki",
+        "uid": "2nji42cVk"
+      },
+      "gridPos": {
+        "h": 18,
+        "w": 16,
+        "x": 0,
+        "y": 0
+      },
+      "id": 2,
+      "options": {
+        "dedupStrategy": "none",
+        "enableLogDetails": true,
+        "prettifyLogMessage": true,
+        "showCommonLabels": false,
+        "showLabels": false,
+        "showTime": true,
+        "sortOrder": "Descending",
+        "wrapLogMessage": true
+      },
+      "pluginVersion": "8.4.5",
+      "targets": [
+        {
+          "datasource": {
+            "type": "loki",
+            "uid": "2nji42cVk"
+          },
+          "expr": "{Application=\"Vtope.Client.Instagram\"} | json | RequestPath!=\"/metrics\" | AccountWorkId=\"$searchid\" | line_format \"{{.Message}}\"",
+          "hide": false,
+          "legendFormat": "",
+          "queryType": "range",
+          "refId": "A"
+        }
+      ],
+      "title": "Логи аккаунта",
+      "transparent": true,
+      "type": "logs"
+    }
+  ],
+  "schemaVersion": 35,
+  "style": "dark",
+  "tags": [],
+  "templating": {
+    "list": [
+      {
+        "current": {
+          "selected": false,
+          "text": "3b7e75d7-e8ee-40af-a30f-86c7f3b5b06a",
+          "value": "3b7e75d7-e8ee-40af-a30f-86c7f3b5b06a"
+        },
+        "hide": 0,
+        "label": "searchid",
+        "name": "searchid",
+        "options": [
+          {
+            "selected": true,
+            "text": "3b7e75d7-e8ee-40af-a30f-86c7f3b5b06a",
+            "value": "3b7e75d7-e8ee-40af-a30f-86c7f3b5b06a"
+          }
+        ],
+        "query": "3b7e75d7-e8ee-40af-a30f-86c7f3b5b06a",
+        "skipUrlSync": false,
+        "type": "textbox"
+      }
+    ]
+  },
+  "time": {
+    "from": "now-6M",
+    "to": "now"
+  },
+  "timepicker": {},
+  "timezone": "",
+  "title": "New dashboard",
+  "uid": "5eQUVZpVz",
+  "version": 1,
+  "weekStart": ""
+}
